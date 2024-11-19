@@ -73,7 +73,7 @@ void ANOROUTENORULECharacter::SetupPlayerInputComponent(UInputComponent* PlayerI
 		*/
 
 		// Looking
-		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &ANOROUTENORULECharacter::Look);
+		// EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &ANOROUTENORULECharacter::Look);
 	}
 	else
 	{

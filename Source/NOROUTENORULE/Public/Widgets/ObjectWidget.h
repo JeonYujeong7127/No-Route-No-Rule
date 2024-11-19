@@ -15,14 +15,15 @@ class NOROUTENORULE_API UObjectWidget : public UUserWidget
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(meta=(BindWidget))
-	TObjectPtr<class UImage> Img_Object;
-
-	UPROPERTY()
-	TObjectPtr<UMaterialInstanceDynamic> MaterialInstanceDynamic;
-
-	UPROPERTY(EditAnywhere)
-	TObjectPtr<UMaterial> ChromaKeyMaterial;
-	
 	virtual void NativeConstruct() override;
+	virtual void NativeDestruct() override;
+	
+	UPROPERTY(meta=(BindWidget))
+	TObjectPtr<class UTextBlock> TB_BlinkText;
+
+private:
+	virtual void HandleSpacebarPress();
+	virtual void ToggleBlink();
+
+	FTimerHandle BlinkTimerHandle;
 };
